@@ -9,4 +9,6 @@ testacular.conf.js
 ehthumbs.db
 Icon?
 Thumbs.db
-
+.yarn
+.yarnrc.yml
+yarn.lock

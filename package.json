@@ -9,7 +9,7 @@
     "router"
   ],
   "homepage": "http://millermedeiros.github.com/crossroads.js/",
-  "version": "0.12.2",
+  "version": "0.12.3",
   "author": {
     "name": "Miller Medeiros",
     "url": "http://blog.millermedeiros.com/"
@@ -29,15 +29,16 @@
     }
   ],
   "dependencies": {
-    "async": "^0.9.0",
-    "signals": "<2.0"
+    "async": "^3.2.6",
+    "signals": "^1.0.0"
   },
   "devDependencies": {
-    "uglify-js": "~1.2.3",
-    "jasmine-node": "latest"
+    "jasmine-node": "^3.0.0",
+    "uglify-js": "~3.19.3"
   },
   "scripts": {
     "pretest": "node build",
     "test": "node node_modules/.bin/jasmine-node dev/tests/spec"
-  }
+  },
+  "packageManager": "yarn@4.9.1"
 }

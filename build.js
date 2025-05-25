@@ -9,7 +9,6 @@ var FILE_ENCODING = 'utf-8',
 
 
 var _fs = require('fs'),
-    _path = require('path'),
     _pkg = JSON.parse(readFile('package.json')),
     _now = new Date(),
     _replacements = {
@@ -65,12 +64,12 @@ function uglify(srcPath) {
       uglyfyJS = require('uglify-js'),
       jsp = uglyfyJS.parser,
       pro = uglyfyJS.uglify,
-      ast = jsp.parse( _fs.readFileSync(srcPath, FILE_ENCODING) );
+      ast = uglyfyJS.parse( _fs.readFileSync(srcPath, FILE_ENCODING) );
 
-    ast = pro.ast_mangle(ast);
-    ast = pro.ast_squeeze(ast);
+    // ast = uglyfyJS.mangle_properties(ast);
+    // ast = pro.ast_squeeze(ast);
 
-    return pro.gen_code(ast);
+    return uglyfyJS.minify(ast);
 }
 
 
@@ -96,4 +95,3 @@ function pad(val){
 purgeDeploy();
 build();
 minify();
-
